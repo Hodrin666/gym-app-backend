@@ -1,0 +1,36 @@
+{
+  "name": "gym-backend",
+  "version": "1.0.0",
+  "description": "gym-app-backend",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --exec babel-node ./src/index.ts --extensions .ts",
+    "build:compile": "npx babel src --extensions .ts --out-dir lib --source-maps",
+    "build:types": "tsc",
+    "build": "concurrently npm:build:*",
+    "watch:compile": "npx babel src --extensions .ts --out-dir lib --source-maps --watch",
+    "watch:types": "tsc --watch",
+    "watch": "concurrently npm:watch:*",
+    "start": "node lib/index.js"
+  },
+  "keywords": [],
+  "author": "Pedro Sobral",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.16.8",
+    "@babel/core": "^7.16.12",
+    "@babel/node": "^7.16.8",
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/plugin-proposal-object-rest-spread": "^7.16.7",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-typescript": "^7.16.7",
+    "@types/graphql": "^14.5.0",
+    "@types/node": "^17.0.13",
+    "concurrently": "^7.0.0",
+    "nodemon": "^2.0.15",
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "ts-node": "^10.4.0"
+  }
+}
